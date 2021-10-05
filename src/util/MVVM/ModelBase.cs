@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MVVM
+namespace Mealho.MVVM
 {
     public class ModelBase : INotifyPropertyChanged
     {
