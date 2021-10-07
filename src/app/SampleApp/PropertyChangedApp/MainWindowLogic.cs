@@ -21,5 +21,19 @@ namespace Mealho
             }
         }
         private string statusMessage;
+
+        public string IsPushed
+        {
+            get
+            {
+                return isPushed;
+            }
+            set
+            {
+                isPushed = value;
+                OnPropertyChanged(nameof(IsPushed));
+            }
+        }
+        private string isPushed;
     }
 }

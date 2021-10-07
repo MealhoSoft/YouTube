@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>propm</Title>
+      <Shortcut>propm</Shortcut>
+      <Description>Code snippet for OnPropertyChanged</Description>
+      <Author>mealho</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+            <ID>PropertyName</ID>
+            <ToolTip>Property name</ToolTip>
+            <Default>MyProperty</Default>
+        </Literal>
+        <Literal>
+            <ID>fieldName</ID>
+            <ToolTip>Field name</ToolTip>
+            <Default>fieldName</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[ public string $PropertyName$ {
+            get
+            {
+                return $fieldName$;
+            }
+            set
+            {
+                $fieldName$ = value;
+                OnPropertyChanged(nameof($PropertyName$));
+            }
+        }
+        private string $fieldName$;$end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
