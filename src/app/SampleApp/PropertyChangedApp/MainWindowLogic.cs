@@ -20,7 +20,7 @@ namespace Mealho
             set
             {
                 statusMessage = value;
-                OnPropertyChanged(nameof(StatusMessage));
+                RaisePropertyChanged(nameof(StatusMessage));
             }
         }
         private string statusMessage;
