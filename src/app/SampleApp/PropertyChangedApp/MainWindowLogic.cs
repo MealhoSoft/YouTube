@@ -1,4 +1,5 @@
-﻿using Mealho.MVVM;
+﻿using MaterialDesignThemes.Wpf;
+using Mealho.MVVM;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,8 @@ namespace Mealho
 {
     class MainWindowLogic : ModelBase
     {
+        private PaletteHelper paletteHelper;
+
         public string StatusMessage {
             get
             {
@@ -22,18 +25,23 @@ namespace Mealho
         }
         private string statusMessage;
 
-        public string IsPushed
+        public bool IsDarkMode
         {
             get
             {
-                return isPushed;
+                return paletteHelper.GetTheme().GetBaseTheme() == BaseTheme.Dark;
             }
             set
             {
-                isPushed = value;
-                OnPropertyChanged(nameof(IsPushed));
+                var theme = paletteHelper.GetTheme();
+                theme.SetBaseTheme((paletteHelper.GetTheme().GetBaseTheme() == BaseTheme.Dark) ? Theme.Light : Theme.Dark);
+                paletteHelper.SetTheme(theme);
             }
         }
-        private string isPushed;
+
+        public MainWindowLogic()
+        {
+            paletteHelper = new PaletteHelper();
+        }
     }
 }

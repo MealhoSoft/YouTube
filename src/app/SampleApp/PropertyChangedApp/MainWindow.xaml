@@ -8,8 +8,17 @@
     Title="MainWindow"
     Width="800"
     Height="450"
+    Background="{DynamicResource MaterialDesignPaper}"
+    FontFamily="{DynamicResource MaterialDesignFont}"
+    TextElement.Foreground="{DynamicResource MaterialDesignBody}"
     mc:Ignorable="d">
     <Grid>
         <Label Content="{Binding StatusMessage}" />
+        <CheckBox
+            Margin="0,27,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="DarkMode"
+            IsChecked="{Binding IsDarkMode}" />
     </Grid>
 </Window>
