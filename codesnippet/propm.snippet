@@ -28,7 +28,7 @@
             set
             {
                 $fieldName$ = value;
-                OnPropertyChanged(nameof($PropertyName$));
+                RaisePropertyChanged(nameof($PropertyName$));
             }
         }
         private string $fieldName$;$end$]]></Code>
