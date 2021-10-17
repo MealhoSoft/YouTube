@@ -36,6 +36,7 @@ namespace Mealho
                 var theme = paletteHelper.GetTheme();
                 theme.SetBaseTheme((paletteHelper.GetTheme().GetBaseTheme() == BaseTheme.Dark) ? Theme.Light : Theme.Dark);
                 paletteHelper.SetTheme(theme);
+                RaisePropertyChanged(nameof(IsDarkMode));
             }
         }
 

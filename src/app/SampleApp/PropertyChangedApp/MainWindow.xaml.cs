@@ -29,6 +29,33 @@ namespace Mealho
             DataContext = logic;
 
             logic.StatusMessage = "Hello World.";
+
+            logic.PropertyChanged += Logic_PropertyChanged;
+        }
+
+        private void Logic_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(logic.IsDarkMode))
+            {
+                var app = Application.Current;
+                ResourceDictionary darkResourceDictionary = new ResourceDictionary() { Source = new Uri(@"resources\DarkResourceDictionary.xaml", UriKind.Relative) };
+
+                if (logic.IsDarkMode)
+                {
+                    Resources.MergedDictionaries.Add(darkResourceDictionary);
+                }
+                else
+                {
+                    for (int i = 0; i < Resources.MergedDictionaries.Count; i++)
+                    {
+                        if (Resources.MergedDictionaries[i].Source == darkResourceDictionary.Source)
+                        {
+                            Resources.MergedDictionaries.RemoveAt(i);
+                            break;
+                        }
+                    }
+                }
+            }
         }
     }
 }

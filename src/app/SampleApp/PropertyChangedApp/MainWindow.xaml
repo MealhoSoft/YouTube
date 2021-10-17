@@ -19,6 +19,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="DarkMode"
-            IsChecked="{Binding IsDarkMode}" />
+            IsChecked="{Binding IsDarkMode}"
+            Style="{DynamicResource DarkModeIconCheckBoxStyle}" />
     </Grid>
 </Window>
