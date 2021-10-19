@@ -15,12 +15,17 @@
             <Default>MyProperty</Default>
         </Literal>
         <Literal>
+            <ID>Type</ID>
+            <ToolTip>Data type</ToolTip>
+            <Default>type</Default>
+        </Literal>
+        <Literal>
             <ID>fieldName</ID>
             <ToolTip>Field name</ToolTip>
             <Default>fieldName</Default>
         </Literal>
       </Declarations>
-      <Code Language="csharp"><![CDATA[ public string $PropertyName$ {
+      <Code Language="csharp"><![CDATA[ public $Type$ $PropertyName$ {
             get
             {
                 return $fieldName$;
@@ -31,7 +36,7 @@
                 RaisePropertyChanged(nameof($PropertyName$));
             }
         }
-        private string $fieldName$;$end$]]></Code>
+        private $Type$ $fieldName$;$end$]]></Code>
     </Snippet>
   </CodeSnippet>
 </CodeSnippets>
